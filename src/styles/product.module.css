@@ -1,0 +1,30 @@
+.contents {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 100px;
+  text-align: right;
+  padding-top: 25px;
+  color: black;
+  direction: rtl;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: shabnam;
+  padding-bottom: 5rem;
+}
+
+.contents hr {
+  border-top-color: rgb(0 0 0 / 23%);
+  margin: 20px 0px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+.container {
+  overflow: auto;
+  width: 100%;
+
+}

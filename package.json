@@ -1,0 +1,43 @@
+{
+  "name": "final_project",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/",
+  "scripts": {
+    "dev": "next dev ",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.2.10",
+    "aos": "^2.3.4",
+    "axios": "^1.6.8",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "jose": "^5.2.3",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "leaflet": "^1.9.4",
+    "moment-jalaali": "^0.10.0",
+    "mongoose": "^8.2.2",
+    "next": "^13.4.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.2",
+    "react-icons": "^5.0.1",
+    "react-leaflet": "^4.2.1",
+    "react-select": "^5.8.0",
+    "recharts": "^2.12.3",
+    "request": "^2.88.2",
+    "select": "^1.1.2",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.10.7",
+    "swiper": "^11.0.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
+  }
+}

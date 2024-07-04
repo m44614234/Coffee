@@ -1,0 +1,16 @@
+.box{ 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px; 
+    box-shadow: 0px 0px 10px 1px #711D1C;
+    border-radius: 3px;
+    width: 210px;
+    margin: 2rem 0rem;
+    padding: 1rem 0;
+}
+.box svg{
+    font-size: 2rem;
+    margin: 0 auto;
+}

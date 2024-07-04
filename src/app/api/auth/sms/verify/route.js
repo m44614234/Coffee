@@ -1,0 +1,59 @@
+import connectToDB from "@/configs/db";
+import OtpModel from "@/models/Otp";
+import { generateAccessToken } from "@/utils/auth";
+import UserModel from "@/models/User";
+import { roles } from "@/utils/constants";
+
+export async function POST(req) {
+
+
+
+  try {
+    connectToDB();
+    const body = await req.json();
+    const { phone, code } = body;
+    const email = `${phone}@gmail.com`;
+  
+    // Validation (You) ✅
+  
+    const otp = await OtpModel.findOne({ phone, code });
+  
+    if (otp) {
+      const date = new Date();
+      const now = date.getTime();
+  
+      if (otp.expTime > now) {
+        const accessToken = generateAccessToken({ email });
+  
+        const users = await UserModel.find({});
+  
+        await UserModel.create({
+          email,
+          phone,
+          role: users.length > 0 ? roles.USER : roles.ADMIN
+        });
+  
+        return Response.json(
+          { message: "Code is correct :))" },
+          {
+            status: 200,
+            headers: { "Set-Cookie": `token=${accessToken};path=/;httpOnly=true` }
+          }
+        );
+      } else {
+        return Response.json({ message: "Code is expired :))" }, { status: 410 });
+      }
+    } else {
+  
+      return Response.json(
+        { message: "Code is not correct !!" },
+        { status: 409 }
+      );
+    }
+  } catch (error) {
+    return Response.json(
+      { message: "error =>" ,error },
+      { status: 500 }
+    );
+  }
+}
